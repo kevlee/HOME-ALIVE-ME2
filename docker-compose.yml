@@ -1,0 +1,16 @@
+version: '1'
+services:
+  homealiveme-db:
+    image: mysql
+    environment:
+      - MYSQL_USER=MYHOME
+      - MYSQL_PASSWORD=HOMEALIVEME!
+      - MYSQL_DATABASE=HOMEALIVEME
+      - MYSQL_MAX_ALLOWED_PACKET=1024M
+      - MYSQL_INNODB_BUFFER_POOL_SIZE=1G
+      - MYSQL_INNODB_LOG_FILE_SIZE=256M
+      - MYSQL_INNODB_LOG_BUFFER_SIZE=256M
+    volumes:
+      - homealiveme-db-data:/var/lib/mysql/
+    ports:
+      - "3306:3306"
