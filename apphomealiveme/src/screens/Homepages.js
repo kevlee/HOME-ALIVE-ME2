@@ -1,24 +1,33 @@
 import React, { Component } from "react";
-import { StyleSheet, View, Image, ImageBackground } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Image,
+  ImageBackground,
+  Dimensions
+} from "react-native";
 import Menu from "../components/Menu";
 import Myhome from "../components/Myhome";
 import Stats from "../components/Stats";
 import Lockall from "../components/Lockall";
 
+ const screenWidth = Math.round(Dimensions.get('window').width);
+ const screenHeight = Math.round(Dimensions.get('window').height);
+
+
 function Homepages(props) {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={require("../assets/images/background1.png")}
+        source={require("../assets/images/background.png")}
         resizeMode="stretch"
         style={styles.image}
-        imageStyle={styles.image_imageStyle}
       >
         <Menu style={styles.materialButtonTransparentHamburger1}></Menu>
         <View style={styles.myhomeRow}>
           <Myhome style={styles.myhome}></Myhome>
-          <Stats style={styles.materialButtonShare2}></Stats>
-          <Lockall style={styles.materialButtonShare3}></Lockall>
+          <Stats style={styles.Stats}></Stats>
+          <Lockall style={styles.Lockall}></Lockall>
         </View>
         <Image
           source={require("../assets/images/ICON.png")}
@@ -33,48 +42,64 @@ function Homepages(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row"
+    flexDirection: 'column',
+    justifyContent: 'space-between'
   },
   image: {
-    width: 1924,
-    height: 1084,
-    marginLeft: -2,
-    marginTop: -1
+    width: screenWidth,
+    height: screenHeight,
   },
-  image_imageStyle: {},
-  materialButtonTransparentHamburger1: {
-    width: 91,
-    height: 88,
-    marginTop: 37,
-    marginLeft: 1785
-  },
-  myhome: {
-    width: 350,
-    height: 350
-  },
-  materialButtonShare2: {
-    width: 350,
-    height: 350,
-    marginLeft: 225
-  },
-  materialButtonShare3: {
-    width: 350,
-    height: 350,
-    borderRadius: 100,
-    marginLeft: 190
-  },
+
   myhomeRow: {
-    height: 350,
-    flexDirection: "row",
+    height: '30%',
     marginTop: 200,
     marginLeft: 152,
-    marginRight: 307
+    marginRight: 307,
+    flexDirection: 'raw',
+    justifyContent: 'space-between'
   },
+
+  '@media (max-width: 400)': {
+    myhomeRow: {
+      //display: 'flex',
+      //flexFlow: 'row nowrap',
+    }
+  },
+
+  myhome: {
+    width: 200,
+    height: 150,
+    position: "relative",
+    float: "left"
+  },
+  Stats: {
+    width: 200,
+    height: 150,
+    Left: 30,
+    position: "relative",
+    float: "left"
+  },
+
+  Lockall: {
+    width: 200,
+    height: 150,
+    Left: 30,
+    position: "relative",
+    float: "left"
+  },
+
+  materialButtonTransparentHamburger1: {
+    width: '5%',
+    height: '5%',
+    marginTop: '2%',
+    marginLeft: '90%',
+    position: "relative"
+  },
+
   image2: {
-    width: 391,
-    height: 293,
-    marginTop: 111,
-    marginLeft: 1428
+    width: '20%',
+    height: '20%',
+    marginLeft: '80%',
   }
 });
 

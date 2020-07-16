@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     color: "rgba(228,105,46,1)",
-    fontSize: 200,
+    fontSize: 100,
     alignSelf: "center"
   }
 });

@@ -9,29 +9,7 @@ import Homepages from "./src/screens/Homepages";
 import Untitled from "./src/screens/Untitled";
 import Untitled1 from "./src/screens/Untitled1";
 
-const DrawerNavigation = createDrawerNavigator({
-  Burgermenu: Burgermenu,
-  Homepages: Homepages,
-  Untitled: Untitled,
-  Untitled1: Untitled1
-});
-
-const StackNavigation = createStackNavigator(
-  {
-    DrawerNavigation: {
-      screen: DrawerNavigation
-    },
-    Burgermenu: Burgermenu,
-    Homepages: Homepages,
-    Untitled: Untitled,
-    Untitled1: Untitled1
-  },
-  {
-    headerMode: "none"
-  }
-);
-
-const AppContainer = createAppContainer(StackNavigation);
+const AppContainer = Homepages;
 
 function App() {
   const [isLoadingComplete, setLoadingComplete] = useState(false);

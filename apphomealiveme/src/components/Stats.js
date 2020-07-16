@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   icon: {
     color: "rgba(228,105,46,1)",
     fontFamily: "Roboto",
-    fontSize: 200,
+    fontSize: 100,
     alignSelf: "center",
     margin: 0
   }
